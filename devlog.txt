@@ -1,10 +1,10 @@
-<Team Name (without word "team")>
-<Member Bubbles>
-<Member Buttercup>
-<Member Blossom>
-pd <pd#>
+TanofWongSquares
+Stephan Tan
+Larry Wong
+Richard Wong
+pd 8
 ---------------------
-<Project>
+Battleship Warfare
 
 
 
