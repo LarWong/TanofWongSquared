@@ -1,5 +1,5 @@
-TanofWongSquares
-Stephan Tan
+TanofWongSquared
+Stefan Tan
 Larry Wong
 Richard Wong
 pd 8
