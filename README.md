@@ -7,6 +7,7 @@ Our project is a modified version of Battleship. It follows all the rules to reg
 Once you have cloned this repo, you can run this program through the folloeing termainal commands:
 1. *javac Woo.java*
 2. *java Woo*
+
 Once you have entered these commands, the program should begin and you are prompted with a greeting. Tf this has not occured, then something is wrong with your cloned repor or your terminal commands.
 
 
