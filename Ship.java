@@ -2,6 +2,7 @@ public abstract class Ship{
     private boolean isAlive, recharging;
     protected double health;
     protected int attack, defense, movement, size, abCtr, roundLastUsed;
+    protected int[][] coords;
 
     public Ship(){
 	isAlive = true;
@@ -27,7 +28,8 @@ public abstract class Ship{
 	return size;
     }
 
-    public void shoot(int[] cords){
+    public int[][] getLocation(){
+	return coords;
     }
 
     public abstract void ability();

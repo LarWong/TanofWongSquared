@@ -15,4 +15,8 @@ public class Submarine extends Ship
 	movement = 6;
 	size = 3;
     }
+
+    public void ability(){
+	System.out.println("Submarine")
+	    }
 }
