@@ -1,0 +1,9 @@
+Period 8
+TanofWongSquared
+Larry Wong, Richard Wong, Stefan Tan
+
+Current Plan of Action
+Next Steps
+1. Ship superclass
+2. Subclasses of Ship
+3. PlayerGrid class
