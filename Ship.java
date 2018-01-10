@@ -32,6 +32,9 @@ public abstract class Ship{
 	return coords;
     }
 
+    public abstract void setLocation(int[][] coords);
+    
+
     public abstract void ability();
 
     public void updateHealth(int damage){
