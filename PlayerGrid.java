@@ -15,13 +15,18 @@ public class PlayerGrid{
 	    }
 	    s += " \t";
 	    for (
+		 }
 	}
-
-
+	return s;
     }
-
-
-
+    public static boolean placeShip(Ship ship, int[] coords, String direction) {
+	
+    }
+    public static String printField;
+    public static String printMarkup;
+    public static void markMiss;
+    public static void markClear;
+    public static void update;
 
 
 

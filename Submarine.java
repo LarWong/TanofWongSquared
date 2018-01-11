@@ -17,6 +17,6 @@ public class Submarine extends Ship
     }
 
     public void ability(){
-	System.out.println("Submarine")
-	    }
+	System.out.println("Submarine");
+    }
 }
