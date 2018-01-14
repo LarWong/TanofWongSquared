@@ -52,23 +52,26 @@ public class Woo{
     
     public static void main(String[] args){
 	newRound();
-	// Debugging 
-	System.out.println(Grid0);
-	System.out.println(Grid1);
-	for (Ship s: Player0Ships) {
-	    System.out.println(s);
-	}
-	for (Ship s: Player1Ships) {
-	    System.out.println(s);
-	}
-	//
+	/* Debugging 
+	   System.out.println(Grid0);
+	   System.out.println(Grid1);
+	   for (Ship s: Player0Ships) {
+	   System.out.println(s);
+	   } 
+	   for (Ship s: Player1Ships) {
+	   System.out.println(s);
+	   }
+	*/
 
 	// prompt each player to specify ship location
 	// **requires implementation
 	promptShipPlacement("Player0");
+	/* Debugging
 	for (Ship s: currPlayerShips) {
 	    System.out.println(s);
 	}
+	*/
+	
 	promptShipPlacement("Player1");
 
 	// start game
