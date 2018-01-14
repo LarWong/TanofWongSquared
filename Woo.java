@@ -102,14 +102,6 @@ public class Woo{
 		next = true;
 
 	    }
-<<<<<<< HEAD
-	    catch ( IOException e ) {
-        System.out.println("Please enter a cardinal direction");
-    }
-    playerC.setLocation(s,coordinates,orientation);
-=======
-	}
->>>>>>> d1e4ca4021b965c3f8f7e93c4583a3f9f446297f
 
 }
     }
