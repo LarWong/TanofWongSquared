@@ -91,7 +91,7 @@ public class PlayerGrid{
             return false;
           }
       }
-      if (direction == "North"){
+      if (direction == "West"){
           int[] newCoords = {coord[0] , coord[1] - x};
           if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
