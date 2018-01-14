@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import cs1.Keyboard;
 
 public class Woo{
 
@@ -64,24 +65,46 @@ public class Woo{
 	}
 
 	for (Ship s: currPlayerShips) {
+      //used to determine if step is completed
+      boolean next = false;
 	    // Coordinates
-	    String coordinates = "";
-	    System.out.print("Please provide starting coordinates for " + s + ": ");
+	    int[] coordinates = new int[2];
+
 
 	    try {
-		coordinates = in.readLine();
+        while (next == false ||
+        (coordinates[0] > 15 || coordinates[1] > 15)){
+          System.out.print("Please provide starting coordinates for " + s + ": ");
+          System.out.println("Please enter a number from 1-15");
+          System.out.println("Enter the row number (1-15):");
+		      coordinates[0] = Keyboard.readInt();
+          System.out.println("Enter the column number (1-15):");
+		      coordinates[1] = Keyboard.readInt();
+          next = true;
+        }
 	    }
-	    catch ( IOException e ) { }
+	    catch ( IOException e ) {
+        System.out.println("Please enter a number from 1-15");
+      }
 
+      next = false;
 	    // Orientation (Rotation)
 	    String orientation = "";
-	    System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
 
 	    try {
-		orientation = in.readLine();
+        while (next == false &&
+        (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West")){
+          System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
+          orientation = Keyboard.readString();
+          next = true;
+        }
+
 	    }
-	    catch ( IOException e ) { }
+	    catch ( IOException e ) {
+        System.out.println("Please enter a cardinal direction");
+    }
 	}
+}
 
 	promptPlayerSwitch();
     }
