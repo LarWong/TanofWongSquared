@@ -44,7 +44,7 @@ public class Woo{
 	}
 	else {
 	    currPlayerGrid = Grid1;
-	    currPlayerShips = Player0Ships;
+	    currPlayerShips = Player1Ships;
 	}
 	//if player0, use player0 grid and ships
 	//else if player1, use player1 grid and ships
@@ -65,14 +65,14 @@ public class Woo{
 
 	// prompt each player to specify ship location
 	// **requires implementation
-	promptShipPlacement("Player0");
+	promptShipPlacement("player0");
 	/* Debugging
 	for (Ship s: currPlayerShips) {
 	    System.out.println(s);
 	}
 	*/
 	
-	promptShipPlacement("Player1");
+	promptShipPlacement("player1");
 
 	// start game
 	// isAlive has not been implemented yet
