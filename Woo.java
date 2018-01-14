@@ -1,13 +1,26 @@
+import java.io.*;
+import java.util.*;
+
 public class Woo{
     
-    // Player setup
+    // INSTANCE VARIABLES
     private static PlayerGrid Grid0, Grid1;
     private static Ship[] Player0Ships, Player1Ships;
 
-    // Keep track of current grid
     private static PlayerGrid currPlayerGrid;
     private static Ship[] currPlayerShips;
-    
+
+    private static InputStreamReader isr;
+    private static BufferedReader in;
+
+    // DEFAULLT CONSTRUCTOR
+    public Woo() {
+	isr = new InputStreamReader( System.in );
+	in = new BufferedReader( isr );
+	newRound();
+    }
+
+    // ROUND SETUP COMPONENTS
     // Instantiates and binds new empty grids
     private static void makeNewGrids(){
 	Grid0 = new PlayerGrid();
@@ -37,6 +50,7 @@ public class Woo{
 	makeNewShips();
     }
 
+    // SHIP PLACEMENT
     private static void promptShipPlacement(String player){
 	if (player == "player0") {
 	    currPlayerGrid = Grid0;
@@ -46,12 +60,37 @@ public class Woo{
 	    currPlayerGrid = Grid1;
 	    currPlayerShips = Player1Ships;
 	}
-	//if player0, use player0 grid and ships
-	//else if player1, use player1 grid and ships
+
+	for (Ship s: currPlayerShips) {
+	    // Coordinates
+	    String coordinates = "";
+	    System.out.print("Please provide starting coordinates for " + s + ": ");
+
+	    try {
+		coordinates = in.readLine();
+	    }
+	    catch ( IOException e ) { }
+
+	    // Orientation (Rotation)
+	    String orientation = "";
+	    System.out.print("Please provide the orientation of the " + s + ": ");
+
+	    try {
+		orientation = in.readLine();
+	    }
+	    catch ( IOException e ) { }
+	}
+	promptPlayerSwitch();
+    }
+
+    private static void promptPlayerSwitch() {
+	// Clear console?
+	// State that player's turn has been completed
+	// Prompt yes or no if players have switched
     }
     
     public static void main(String[] args){
-	newRound();
+	Woo game = new Woo();
 	/* Debugging 
 	   System.out.println(Grid0);
 	   System.out.println(Grid1);
@@ -65,14 +104,13 @@ public class Woo{
 
 	// prompt each player to specify ship location
 	// **requires implementation
-	promptShipPlacement("player0");
+	game.promptShipPlacement("player0");
 	/* Debugging
 	for (Ship s: currPlayerShips) {
 	    System.out.println(s);
 	}
 	*/
-	
-	promptShipPlacement("player1");
+	game.promptShipPlacement("player1");
 
 	// start game
 	// isAlive has not been implemented yet
