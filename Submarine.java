@@ -14,6 +14,7 @@ public class Submarine extends Ship
 	defense = 5;
 	movement = 6;
 	size = 3;
+  symbol = "S";
     }
 
     public void ability(){

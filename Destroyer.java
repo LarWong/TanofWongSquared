@@ -14,6 +14,7 @@ public class Destroyer extends Ship
 	defense = 30;
 	movement = 8;
 	size = 2;
+  symbol = "D";
     }
 
     public void ability(){

@@ -3,6 +3,7 @@ public abstract class Ship{
     protected double health;
     protected int attack, defense, movement, size, abCtr, roundLastUsed;
     protected int[][] coords;
+    protected String symbol;
 
     public Ship(){
 	isAlive = true;
@@ -39,7 +40,3 @@ public abstract class Ship{
     }
 
 }
-
-	
-	
-    

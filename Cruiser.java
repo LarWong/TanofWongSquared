@@ -14,6 +14,7 @@ public class Cruiser extends Ship
 	defense = 20;
 	movement = 5;
 	size = 3;
+  symbol = "C";
     }
 
     public void ability(){

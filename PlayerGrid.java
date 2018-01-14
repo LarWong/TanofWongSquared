@@ -2,7 +2,7 @@ public class PlayerGrid{
 
   private int[][] field = new int[15][15];
   private int[][] markup = new int[15][15];
-  private String _columns = "\t   01 02 03 04 05 06 07 08 09 10 11 12 13 14 15\n";
+  private String _columns = "\t    01 02 03 04 05 06 07 08 09 10 11 12 13 14 15\n";
   private String[] _rows =
   {"01","02","03","04","05","06","07","08","09","10","11","12","13","14","15"};
 

@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class Woo{
-    
+
     // INSTANCE VARIABLES
     private static PlayerGrid Grid0, Grid1;
     private static Ship[] Player0Ships, Player1Ships;
@@ -38,7 +38,7 @@ public class Woo{
 	ships[4] = new Submarine();
 	return ships;
     }
-    
+
     // Binds instance variable
     private static void makeNewShips(){
 	Player0Ships = generateShips();
@@ -75,19 +75,21 @@ public class Woo{
 
 	    // Orientation (Rotation)
 	    String orientation = "";
-	    System.out.print("Please provide the orientation of the " + s + ": ");
+	    System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
 
 	    try {
 		orientation = in.readLine();
 	    }
 	    catch ( IOException e ) { }
 	}
+
 	promptPlayerSwitch();
     }
 
     private static void promptPlayerSwitch() {
-	// Clear console?
-	
+
+    System.out.prinln("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+
 	// State that player's turn has been completed
 	System.out.println("Your turn has ended");
 	if (currPlayer == "player0") {
@@ -96,7 +98,7 @@ public class Woo{
 	else {
 	    currPlayer = "player0";
 	}
-	
+
 	// Prompt yes or no if players have switched
 	System.out.print("Enter any key to confirm this is " + currPlayer);
 	try {
@@ -104,15 +106,15 @@ public class Woo{
 	}
 	catch ( IOException e ) { };
     }
-    
+
     public static void main(String[] args){
 	Woo game = new Woo();
-	/* Debugging 
+	/* Debugging
 	   System.out.println(Grid0);
 	   System.out.println(Grid1);
 	   for (Ship s: Player0Ships) {
 	   System.out.println(s);
-	   } 
+	   }
 	   for (Ship s: Player1Ships) {
 	   System.out.println(s);
 	   }
