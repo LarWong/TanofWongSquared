@@ -7,6 +7,7 @@ public class Woo{
     private static PlayerGrid Grid0, Grid1;
     private static Ship[] Player0Ships, Player1Ships;
 
+    private static String currPlayer;
     private static PlayerGrid currPlayerGrid;
     private static Ship[] currPlayerShips;
 
@@ -52,7 +53,8 @@ public class Woo{
 
     // SHIP PLACEMENT
     private static void promptShipPlacement(String player){
-	if (player == "player0") {
+	currPlayer = player;
+	if (currPlayer == "player0") {
 	    currPlayerGrid = Grid0;
 	    currPlayerShips = Player0Ships;
 	}
@@ -85,8 +87,22 @@ public class Woo{
 
     private static void promptPlayerSwitch() {
 	// Clear console?
+	
 	// State that player's turn has been completed
+	System.out.println("Your turn has ended");
+	if (currPlayer == "player0") {
+	    currPlayer = "player1";
+	}
+	else {
+	    currPlayer = "player0";
+	}
+	
 	// Prompt yes or no if players have switched
+	System.out.print("Enter any key to confirm this is " + currPlayer);
+	try {
+	    in.readLine();
+	}
+	catch ( IOException e ) { };
     }
     
     public static void main(String[] args){
