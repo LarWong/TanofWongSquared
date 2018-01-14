@@ -9,14 +9,15 @@ public class Destroyer extends Ship
     public Destroyer()
     {
 	super();
-	health = 50;
-	attack = 60;
-	defense = 5;
-	movement = 6;
-	size = 3;
+	health = 60;
+	attack = 30;
+	defense = 30;
+	movement = 8;
+	size = 2;
     }
 
     public void ability(){
-	System.out.println("Submarine")
-	    }
+	System.out.println("The destroyer can shoot twice once every game");
+	// Requires implementation
+    }
 }

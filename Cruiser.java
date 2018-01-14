@@ -9,14 +9,14 @@ public class Cruiser extends Ship
     public Cruiser()
     {
 	super();
-	health = 50;
-	attack = 60;
-	defense = 5;
-	movement = 6;
+	health = 100;
+	attack = 50;
+	defense = 20;
+	movement = 5;
 	size = 3;
     }
 
     public void ability(){
-	System.out.println("Submarine")
-	    }
+	System.out.println("The Cruiser increases its attack");
+    }
 }

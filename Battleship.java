@@ -9,14 +9,15 @@ public class Battleship extends Ship
     public Battleship()
     {
 	super();
-	health = 50;
-	attack = 60;
-	defense = 5;
-	movement = 6;
-	size = 3;
+	health = 125;
+	attack = 50;
+	defense = 40;
+	movement = 4;
+	size = 4;
     }
 
     public void ability(){
-	System.out.println("Submarine")
-	    }
+	System.out.println("The Battleship increases defense");
+	// Requires implementation
+    }
 }

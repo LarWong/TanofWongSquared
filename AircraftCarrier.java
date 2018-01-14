@@ -9,14 +9,15 @@ public class AircraftCarrier extends Ship
     public AircraftCarrier()
     {
 	super();
-	health = 50;
-	attack = 60;
-	defense = 5;
-	movement = 6;
-	size = 3;
+	health = 150;
+	attack = 40;
+	defense = 10;
+	movement = 4;
+	size = 5;
     }
 
     public void ability(){
-	System.out.println("Submarine")
-	    }
+	System.out.println("Returns a row number with one or more opponent vessels");
+	// Requires implementation
+    }	    	 
 }
