@@ -65,53 +65,51 @@ public class Woo{
 	}
 
 	for (Ship s: currPlayerShips) {
-      //used to determine if step is completed
-      boolean next = false;
+	    //used to determine if step is completed
+	    boolean next = false;
 	    // Coordinates
 	    int[] coordinates = new int[2];
 
-
 	    try {
-        while (next == false ||
-        (coordinates[0] > 15 || coordinates[1] > 15)){
-          System.out.print("Please provide starting coordinates for " + s + ": ");
-          System.out.println("Please enter a number from 1-15");
-          System.out.println("Enter the row number (1-15):");
-		      coordinates[0] = Keyboard.readInt();
-          System.out.println("Enter the column number (1-15):");
-		      coordinates[1] = Keyboard.readInt();
-          next = true;
-        }
+		while (next == false ||
+		       (coordinates[0] > 15 || coordinates[1] > 15)){
+		    System.out.print("Please provide starting coordinates for " + s + ": ");
+		    System.out.println("Please enter a number from 1-15");
+		    System.out.println("Enter the row number (1-15):");
+		    coordinates[0] = Keyboard.readInt();
+		    System.out.println("Enter the column number (1-15):");
+		    coordinates[1] = Keyboard.readInt();
+		    next = true;
+		}
 	    }
 	    catch ( IOException e ) {
-        System.out.println("Please enter a number from 1-15");
-      }
+		System.out.println("Please enter a number from 1-15");
+	    }
 
-      next = false;
+	    next = false;
 	    // Orientation (Rotation)
 	    String orientation = "";
 
 	    try {
-        while (next == false &&
-        (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West")){
-          System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
-          orientation = Keyboard.readString();
-          next = true;
-        }
+		while (next == false &&
+		       (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West")){
+		    System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
+		    orientation = Keyboard.readString();
+		    next = true;
+		}
 
 	    }
 	    catch ( IOException e ) {
-        System.out.println("Please enter a cardinal direction");
-    }
+		System.out.println("Please enter a cardinal direction");
+	    }
 	}
-}
 
 	promptPlayerSwitch();
     }
 
     private static void promptPlayerSwitch() {
 
-    System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 	// State that player's turn has been completed
 	System.out.println("Your turn has ended");
