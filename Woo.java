@@ -1,4 +1,5 @@
 public class Woo{
+    
     // Player setup
     private static PlayerGrid Grid0, Grid1;
     private static Ship[] Player0Ships, Player1Ships;
@@ -32,9 +33,14 @@ public class Woo{
 	makeNewShips();
     }
 
+    private static void promptShipPlacement(String player){
+	//if player0, use player0 grid and ships
+	//else if player1, use player1 grid and ships
+    }
+    
     public static void main(String[] args){
 	newRound();
-	/* Debugging */
+	// Debugging 
 	System.out.println(Grid0);
 	System.out.println(Grid1);
 	for (Ship s: Player0Ships) {
@@ -43,11 +49,19 @@ public class Woo{
 	for (Ship s: Player1Ships) {
 	    System.out.println(s);
 	}
+	//
+
 	// prompt each player to specify ship location
+	// **requires implementation
+	promptShipPlacement("Player0");
+	promptShipPlacement("Player1");
+
 	// start game
-	// ship movement
-	// ability and shooting
-	// field updates
-	// repeat
+	while (Grid0.isAlive() && Grid1.isAlive()) {
+	    // ship movement
+	    // ability and shooting
+	    // field updates
+	    // repeat
+	}
     }
 }
