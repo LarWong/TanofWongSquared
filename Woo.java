@@ -4,6 +4,10 @@ public class Woo{
     private static PlayerGrid Grid0, Grid1;
     private static Ship[] Player0Ships, Player1Ships;
 
+    // Keep track of current grid
+    private static PlayerGrid currPlayerGrid;
+    private static Ship[] currPlayerShips;
+    
     // Instantiates and binds new empty grids
     private static void makeNewGrids(){
 	Grid0 = new PlayerGrid();
@@ -34,6 +38,14 @@ public class Woo{
     }
 
     private static void promptShipPlacement(String player){
+	if (player == "player0") {
+	    currPlayerGrid = Grid0;
+	    currPlayerShips = Player0Ships;
+	}
+	else {
+	    currPlayerGrid = Grid1;
+	    currPlayerShips = Player0Ships;
+	}
 	//if player0, use player0 grid and ships
 	//else if player1, use player1 grid and ships
     }
@@ -54,14 +66,20 @@ public class Woo{
 	// prompt each player to specify ship location
 	// **requires implementation
 	promptShipPlacement("Player0");
+	for (Ship s: currPlayerShips) {
+	    System.out.println(s);
+	}
 	promptShipPlacement("Player1");
 
 	// start game
+	// isAlive has not been implemented yet
+	/*
 	while (Grid0.isAlive() && Grid1.isAlive()) {
 	    // ship movement
 	    // ability and shooting
 	    // field updates
 	    // repeat
 	}
+	*/
     }
 }
