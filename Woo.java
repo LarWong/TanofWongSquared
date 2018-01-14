@@ -111,7 +111,7 @@ public class Woo{
 
     private static void promptPlayerSwitch() {
 
-    System.out.prinln("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 	// State that player's turn has been completed
 	System.out.println("Your turn has ended");
