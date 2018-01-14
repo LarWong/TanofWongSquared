@@ -5,7 +5,7 @@ public class PlayerGrid{
   private String _columns = "\t    01 02 03 04 05 06 07 08 09 10 11 12 13 14 15\n";
   private String[] _rows =
   {"01","02","03","04","05","06","07","08","09","10","11","12","13","14","15"};
-  private List<List<Integer>> restrictedArea = new Arraylist<List<Integer>>();
+  private int[][] restrictedArea = new int[20][20];
 
   public  String toString(){
     int ctr = 0;
@@ -37,7 +37,7 @@ public class PlayerGrid{
     return s;
   }
 
-  public static boolean checkArea(int[] coord){
+  public boolean checkArea(int[] coord){
 
     if (!(coord[0] < 15 && coord[1] < 15 &&
         coord[0] >= 0 && coord[1] >= 0))
@@ -45,19 +45,19 @@ public class PlayerGrid{
           return false;
         }
 
-    if (restrictedArea.size() > 0 &&){
-      for (List<Integer> x : restrictedArea)
+    if (restrictedArea.length > 0 ){
+      for (int[] x : restrictedArea)
       {
-        if (x.get(0) == coord[0] && x.get(1) == coord[1]){
+        if (x[0] == coord[0] && x[1] == coord[1]){
           return false;
         }
       }
     }
 
-    return true
+    return true;
   }
 
-  public static boolean setLocation(Ship ship, int[] coord, String direction) {
+  public boolean setLocation(Ship ship, int[] coord, String direction) {
     int[][] setHere = new int[ship.getSize()][2];
     //checking if ship os placed on a restricted area
     if (checkArea(coord) == false){
@@ -66,44 +66,43 @@ public class PlayerGrid{
     for (int x = 0; x < ship.getSize(); x++){
       if (direction == "North"){
           int[] newCoords = {coord[0]-x , coord[1]};
-          if (checkArea(NewCoords) == true){
+          if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
           }else{
-            return false
+            return false;
           }
           }
       if (direction == "South"){
           int[] newCoords = {coord[0]+x , coord[1]};
-          if (checkArea(NewCoords) == true){
+          if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
           }else{
-            return false
+            return false;
           }
       }
       if (direction == "East"){
           int[] newCoords = {coord[0] , coord[1] + x};
-          if (checkArea(NewCoords) == true){
+          if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
           }else{
-            return false
+            return false;
           }
       }
       if (direction == "North"){
           int[] newCoords = {coord[0] , coord[1] - x};
-          if (checkArea(NewCoords) == true){
+          if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
           }else{
-            return false
+            return false;
           }
       }
     }
-        ship.setLocation(setHere);
+        return ship.setLocation(setHere);
 
-    }
     }
 
     /**

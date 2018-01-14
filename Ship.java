@@ -38,12 +38,13 @@ public abstract class Ship{
 	return coords;
     }
 
-    public void setLocation(int[][] loc){
+    public boolean setLocation(int[][] loc){
       for (int r = 0; r < size; r++){
         for (int c = 0; c < 2; c++){
           coords[r][c] =loc[r][c];
         }
       }
+      return true;
 
     }
 
