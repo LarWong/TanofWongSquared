@@ -4,9 +4,14 @@ public abstract class Ship{
     protected int attack, defense, movement, size, abCtr, roundLastUsed;
     protected int[][] coords;
     protected String symbol;
+    protected String name;
 
     public Ship(){
 	isAlive = true;
+    }
+
+    public String getName(){
+	return name;
     }
 
     public double getHealth(){
@@ -31,6 +36,15 @@ public abstract class Ship{
 
     public int[][] getLocation(){
 	return coords;
+    }
+
+    public void setLocation(int[][] loc){
+      for (int r = 0; r < size; r++){
+        for (int c = 0; c < 2; c++){
+          coords[r][c] =loc[r][c];
+        }
+      }
+
     }
 
     public abstract void ability();

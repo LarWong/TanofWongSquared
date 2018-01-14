@@ -14,7 +14,9 @@ public class AircraftCarrier extends Ship
 	defense = 10;
 	movement = 4;
 	size = 5;
+  coords = new int[5][2];
   symbol = "A";
+  name = "AircraftCarrier";
     }
 
     public void ability(){

@@ -5,7 +5,7 @@ import cs1.Keyboard;
 public class Woo{
 
     // INSTANCE VARIABLES
-    private static PlayerGrid Grid0, Grid1;
+    private static PlayerGrid Grid0, Grid1 = new PlayerGrid();
     private static Ship[] Player0Ships, Player1Ships;
 
     private static String currPlayer;
@@ -53,7 +53,7 @@ public class Woo{
     }
 
     // SHIP PLACEMENT
-    private static void promptShipPlacement(String player){
+    private static void promptShipPlacement(String player, PlayerGrid playerC){
 	currPlayer = player;
 	if (currPlayer == "player0") {
 	    currPlayerGrid = Grid0;
@@ -103,10 +103,9 @@ public class Woo{
 	    catch ( IOException e ) {
         System.out.println("Please enter a cardinal direction");
     }
-	}
-}
+    playerC.setLocation(s,coordinates,orientation);
 
-	promptPlayerSwitch();
+}
     }
 
     private static void promptPlayerSwitch() {
