@@ -69,15 +69,25 @@ public class Woo{
 	    boolean next = false;
 	    // Coordinates
 	    int[] coordinates = new int[2];
+	    
+	    System.out.println("Please provide starting coordinates for " + s);
+	    System.out.println("Please enter a number from 1-15");
 
-	    while (next == false ||
-		   (coordinates[0] > 15 || coordinates[1] > 15)){
-		System.out.print("Please provide starting coordinates for " + s + ": ");
-		System.out.println("Please enter a number from 1-15");
-		System.out.println("Enter the row number (1-15):");
-		coordinates[0] = Keyboard.readInt();
-		System.out.println("Enter the column number (1-15):");
-		coordinates[1] = Keyboard.readInt();
+	    while (next == false) {
+		while (coordinates[0] > 15 || coordinates[0] < 1) {
+		    System.out.println("Enter the row number (1-15):");
+		    coordinates[0] = Keyboard.readInt();
+		    if (coordinates[0] > 15 || coordinates[0] < 1) {
+			System.out.println("INVALID ROW NUMBER");
+		    }
+		}
+		while (coordinates[1] > 15 || coordinates[1] < 1) {
+		    System.out.println("Enter the column number (1-15):");
+		    coordinates[1] = Keyboard.readInt();
+		    if (coordinates[1] > 15 || coordinates[1] < 1) {
+			System.out.println("INVALID COLUMN NUMBER");
+		    }
+		}
 		next = true;	    
 	    }
 
