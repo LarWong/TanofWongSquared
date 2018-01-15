@@ -5,7 +5,7 @@ import cs1.Keyboard;
 public class Woo{
 
     // INSTANCE VARIABLES
-    private static PlayerGrid Grid0, Grid1 = new PlayerGrid();
+    private static PlayerGrid Grid0, Grid1;
 
     private static String currPlayer;
     private static PlayerGrid currPlayerGrid;
@@ -25,8 +25,8 @@ public class Woo{
     // ROUND SETUP COMPONENTS
     // Instantiates and binds new empty grids
     private static void makeNewGrids(){
-	Grid0 = new PlayerGrid();
-	Grid1 = new PlayerGrid();
+	Grid0 = new PlayerGrid("0");
+      	Grid1 = new PlayerGrid("1");
     }
 
     // Reinitializes instance variables

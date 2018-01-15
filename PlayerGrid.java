@@ -7,15 +7,25 @@ public class PlayerGrid{
     {"01","02","03","04","05","06","07","08","09","10","11","12","13","14","15"};
     private int[][] restrictedArea = new int[15][15];
 
+    private String name = "";
+    
     private Ship[] ships = new Ship[5];
     private Ship currentShip;
     
-    public PlayerGrid() {
+    public PlayerGrid(String n) {
 	ships[0] = new AircraftCarrier();
 	ships[1] = new Battleship();
 	ships[2] = new Cruiser();
 	ships[3] = new Destroyer();
 	ships[4] = new Submarine();
+	
+	name = n;
+	/* Debugging
+	System.out.println(n);
+	for (Ship s: ships) {
+	    System.out.println(s);
+	}
+	*/
     }
     
     public  String toString(){
@@ -50,7 +60,7 @@ public class PlayerGrid{
 
     public boolean checkArea(int[] coord){
 
-	if (!(coord[0] < 15 && coord[1] < 15 &&
+	if (!(coord[0] < 16 && coord[1] < 16 &&
 	      coord[0] >= 0 && coord[1] >= 0))
 	    {
 		return false;
@@ -58,6 +68,7 @@ public class PlayerGrid{
 
 	for (Ship x : ships){
 	    int[][] shipCoords = x.getLocation();
+	    System.out.println(x);
 	    for (int[] loc : shipCoords){
 		if (loc[0] == coord[0] && loc[1] == coord[1]){
 		    return false;
@@ -82,7 +93,6 @@ public class PlayerGrid{
 	for (Ship s: ships) {
 	    if (s.getName().equals(shipName)){
 		currentShip = s;
-		System.out.println(currentShip.getName());
 	    }
 	}
 	int[][] setHere = new int[currentShip.getSize()][2];
@@ -146,8 +156,8 @@ public class PlayerGrid{
     ***/
 
     public static void main (String [] args){
-	PlayerGrid q = new PlayerGrid();
-	System.out.println(q);
+	//PlayerGrid q = new PlayerGrid();
+	//System.out.println(q);
 
 
 
