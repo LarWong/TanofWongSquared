@@ -14,7 +14,8 @@ Repo of the project, by the project, and for the project
 - the driver of the whole project. It is in charge of running the codes from the other classes. Compile and run this class.
 ## PlayerGrid Class 
 - this class is in charge of making both the grid for the playing field for both players and also the grid that allows both players to keep track of their shots by marking up the grid.
-## Ship Class and its subclasses (AircraftCarrier, Battleship, Destroyer, Submarine, and Cruiser) 
+## Ship Class and its Subclasses 
+##### (AircraftCarrier, Battleship, Destroyer, Submarine, and Cruiser) 
 - contains the stats of each ship as well as the abilities for each type of ship. 
 
 # How to run this program
