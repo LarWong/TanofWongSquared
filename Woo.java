@@ -98,12 +98,11 @@ public class Woo{
 	    while (next == false) {
 		System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
 		orientation = Keyboard.readString();
-		System.out.println(orientation);
-		if (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West") {
-		    System.out.println("INVALID ORIENTATION");
+		if (orientation.equals("North") || orientation.equals("South") || orientation.equals("East") || orientation.equals("West")) {
+		    next = true;
 		}
 		else {
-		    next = true;
+		    System.out.println("INVALID ORIENTATION");
 		}
 	    }
 	    currPlayerGrid.setLocation(s, coordinates, orientation);
