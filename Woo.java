@@ -53,7 +53,7 @@ public class Woo{
     }
 
     // SHIP PLACEMENT
-    private static void promptShipPlacement(String player, PlayerGrid playerC){
+    private static void promptShipPlacement(String player){
 	currPlayer = player;
 	if (currPlayer == "player0") {
 	    currPlayerGrid = Grid0;
@@ -98,13 +98,15 @@ public class Woo{
 	    while (next == false) {
 		System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
 		orientation = Keyboard.readString();
+		System.out.println(orientation);
 		if (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West") {
 		    System.out.println("INVALID ORIENTATION");
 		}
 		else {
 		    next = true;
 		}
-	    }	    
+	    }
+	    currPlayerGrid.setLocation(s, coordinates, orientation);
 	} // end loop through currPlayerShips
     } // end promptShipPlacement
 

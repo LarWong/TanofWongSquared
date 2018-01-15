@@ -59,14 +59,15 @@ public class PlayerGrid{
 
   public boolean setLocation(Ship ship, int[] coord, String direction) {
     int[][] setHere = new int[ship.getSize()][2];
-    int[] newCoords;
+    int[] newCoords = new int[2];
     //checking if ship os placed on a restricted area
     if (checkArea(coord) == false){
       return false;
     }
     for (int x = 0; x < ship.getSize(); x++){
       if (direction == "North"){
-          newCoords = {coord[0]-x , coord[1]};
+          newCoords[0] = coord[0] - x;
+	  newCoords[1] = coord[1];
           if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
@@ -75,7 +76,8 @@ public class PlayerGrid{
           }
           }
       if (direction == "South"){
-          newCoords = {coord[0]+x , coord[1]};
+          newCoords[0] = coord[0] + x;
+	  newCoords[1] = coord[1];
           if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
@@ -84,7 +86,8 @@ public class PlayerGrid{
           }
       }
       if (direction == "East"){
-          newCoords = {coord[0] , coord[1] + x};
+          newCoords[0] = coord[0];
+	  newCoords[1] = coord[1] + x;
           if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
@@ -93,7 +96,8 @@ public class PlayerGrid{
           }
       }
       if (direction == "West"){
-          newCoords = {coord[0] , coord[1] - x};
+          newCoords[0] = coord[0];
+	  newCoords[1] = coord[1] - x;
           if (checkArea(newCoords) == true){
             setHere[x][0] = newCoords[0];
             setHere[x][1] = newCoords[1];
