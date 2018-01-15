@@ -6,14 +6,14 @@ public class Woo{
 
     // INSTANCE VARIABLES
     private static PlayerGrid Grid0, Grid1 = new PlayerGrid();
-    private static Ship[] Player0Ships, Player1Ships;
 
     private static String currPlayer;
     private static PlayerGrid currPlayerGrid;
-    private static Ship[] currPlayerShips;
 
     private static InputStreamReader isr;
     private static BufferedReader in;
+
+    private static String[] shipNames = {"AircraftCarrier","Battleship","Cruiser","Destoyer","Submarine"};
 
     // DEFAULLT CONSTRUCTOR
     public Woo() {
@@ -29,48 +29,28 @@ public class Woo{
 	Grid1 = new PlayerGrid();
     }
 
-    // Instantiates one set of ships
-    private static Ship[] generateShips(){
-	Ship[] ships = new Ship[5];
-	ships[0] = new AircraftCarrier();
-	ships[1] = new Battleship();
-	ships[2] = new Cruiser();
-	ships[3] = new Destroyer();
-	ships[4] = new Submarine();
-	return ships;
-    }
-
-    // Binds instance variable
-    private static void makeNewShips(){
-	Player0Ships = generateShips();
-	Player1Ships = generateShips();
-    }
-
     // Reinitializes instance variables
     private static void newRound(){
 	makeNewGrids();
-	makeNewShips();
     }
 
     // SHIP PLACEMENT
-    private static void promptShipPlacement(String player, Ship[] playerShips){
+    private static void promptShipPlacement(String player){
 	currPlayer = player;
 	if (currPlayer == "player0") {
 	    currPlayerGrid = Grid0;
-	    currPlayerShips = Player0Ships;
 	}
 	else {
 	    currPlayerGrid = Grid1;
-	    currPlayerShips = Player1Ships;
 	}
 
-	for (Ship s: currPlayerShips) {
+	for (String shipName: shipNames) {
 	    //used to determine if step is completed
 	    boolean next = false;
 	    // Coordinates
 	    int[] coordinates = new int[2];
 
-	    System.out.println("Please provide starting coordinates for " + s);
+	    System.out.println("Please provide starting coordinates for " + shipName);
 	    System.out.println("Please enter a number from 1-15");
 
 	    while (next == false) {
@@ -92,17 +72,14 @@ public class Woo{
 	    // Orientation (Rotation)
 		String orientation = "";
 
-		while (next == false) {
-		    System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
+		while (!(orientation.equals("North") || orientation.equals("South") || orientation.equals("East") || orientation.equals("West"))) {
+		    System.out.print("Please provide the orientation of the " + shipName + "(North, South, East or West): ");
 		    orientation = Keyboard.readString();
-		    if (orientation.equals("North") || orientation.equals("South") || orientation.equals("East") || orientation.equals("West")) {
-			next = true;
-		    }
-		    else {
+		    if (!(orientation.equals("North") || orientation.equals("South") || orientation.equals("East") || orientation.equals("West"))) {
 			System.out.println("INVALID ORIENTATION");
 		    }
 		}
-		next = currPlayerGrid.setLocation(s, coordinates, orientation, playerShips);
+	        next = currPlayerGrid.setLocation(shipName, coordinates, orientation);
 		System.out.println(next);
 	    }
 	} // end loop through currPlayerShips
