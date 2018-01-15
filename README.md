@@ -10,11 +10,11 @@ Repo of the project, by the project, and for the project
   Once the everything is set up and both players are ready to play, each player will be prompted to either shoot a number of shots based on the number of their remaining ship or use their ability of a ship. Each player will be able to "markup" a grid to place shot locations (hit or miss). Players are allowed to move their ship for a distance based on their The game is over once all ships on one player’s grid have all sunk.
   
 # Description of Classes
-## * Woo Class  
+## Woo Class  
 - the driver of the whole project. It is in charge of running the codes from the other classes. Compile and run this class.
-## * PlayerGrid Class 
+## PlayerGrid Class 
 - this class is in charge of making both the grid for the playing field for both players and also the grid that allows both players to keep track of their shots by marking up the grid.
-## * Ship Class and its subclasses (AircraftCarrier, Battleship, Destroyer, Submarine, and Cruiser) 
+## Ship Class and its subclasses (AircraftCarrier, Battleship, Destroyer, Submarine, and Cruiser) 
 - contains the stats of each ship as well as the abilities for each type of ship. 
 
 # How to run this program
