@@ -10,8 +10,15 @@ public abstract class Ship{
 	isAlive = true;
     }
 
+public boolean alive(){
+  return isAlive;
+}
     public String getName(){
 	return name;
+    }
+
+    public String getSymbol(){
+      return symbol;
     }
 
     public double getHealth(){
