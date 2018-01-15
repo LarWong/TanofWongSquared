@@ -101,11 +101,12 @@ public class Woo{
 		if (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West") {
 		    System.out.println("INVALID ORIENTATION");
 		}
-		next = true;
-	    }
-
-}
-    }
+		else {
+		    next = true;
+		}
+	    }	    
+	} // end loop through currPlayerShips
+    } // end promptShipPlacement
 
     private static void promptPlayerSwitch() {
 
