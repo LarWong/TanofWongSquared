@@ -107,6 +107,21 @@ public class Woo{
 	catch ( IOException e ) { };
     }
 
+    private static void tutorial() {
+	System.out.println("\n~~~~~~~~~~~~~~~~~~TUTORIAL~~~~~~~~~~~~~~~~~~");
+	System.out.println("Welcome to Battleship Warfare!");
+	System.out.println("Here are some info and rules before you start:\n");
+	System.out.println("1. The battlefield will be represented by a 15x15 array. The sea will be represented by a \"~\" and the types of ship which are the Aircraft Carrier, Battleship, Destroyer, Cruiser, and Submarine will be represented by \"A\", \"B\", \"D\", \"C\", and \"S\" respectively.\n");
+	System.out.println("2. On the markup grid, \"X\" will be used to represent a hit while \"O\" will be used to represent a miss.\n");
+	System.out.println("Now onto the types of ship:\n");
+	System.out.println("The Aircraft Carrier will be the an very important asset to lead you to victory. Although it is vulnerable and large target, it could find a row with one or more of your enemy's vessels. USE IT WISELY!\n");
+	System.out.println("The Battleship although slow, makes up for it with its incredible defense. And if it is not enough, then guess what you increase your defense even more.\n");
+	System.out.println("The Destroyer is a small ship and it may seem weak but don't let that fool you. It can change the impact of the game by firing twice one round but only once!\n");
+	System.out.println("The Cruiser is a known as a \"jack of all trades\" but when needed it can increase its attack!\n");
+	System.out.println("The Submarine is the \"glass cannon\" of your fleet. It hits hard but can't take that much in return. Make sure you protect it as it will be very costly if it is sunk!\n");
+	System.out.println("AND OF COURSE NO CHEATING! THAT IS ALL! HAVE FUN AND GOOD LUCK!\n");
+    }
+
     public static void main(String[] args){
 	Woo game = new Woo();
 	/* Debugging
@@ -129,7 +144,8 @@ public class Woo{
 	}
 	*/
 	game.promptShipPlacement("player1");
-
+	
+	tutorial();
 	// start game
 	// isAlive has not been implemented yet
 	/*
