@@ -10,9 +10,10 @@ public abstract class Ship{
 	isAlive = true;
     }
 
-public boolean alive(){
-  return isAlive;
-}
+    public boolean alive(){
+	return isAlive;
+    }
+    
     public String getName(){
 	return name;
     }
@@ -59,6 +60,8 @@ public boolean alive(){
 
     public void updateHealth(int damage){
 	health = health - damage;
+	if (health <= 0)
+	    isAlive = false;
     }
 
 }
