@@ -88,25 +88,25 @@ public class Woo{
 			System.out.println("INVALID COLUMN NUMBER");
 		    }
 		}
-		next = true;	    
-	    }
 
-	    next = false;
 	    // Orientation (Rotation)
-	    String orientation = "";
+		String orientation = "";
 
-	    while (next == false) {
-		System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
-		orientation = Keyboard.readString();
-		if (orientation.equals("North") || orientation.equals("South") || orientation.equals("East") || orientation.equals("West")) {
-		    next = true;
+		while (next == false) {
+		    System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
+		    orientation = Keyboard.readString();
+		    if (orientation.equals("North") || orientation.equals("South") || orientation.equals("East") || orientation.equals("West")) {
+			next = true;
+		    }
+		    else {
+			System.out.println("INVALID ORIENTATION");
+		    }
 		}
-		else {
-		    System.out.println("INVALID ORIENTATION");
-		}
+		next = currPlayerGrid.setLocation(s, coordinates, orientation);
+		System.out.println(next);
 	    }
-	    currPlayerGrid.setLocation(s, coordinates, orientation);
 	} // end loop through currPlayerShips
+	promptPlayerSwitch();
     } // end promptShipPlacement
 
     private static void promptPlayerSwitch() {
