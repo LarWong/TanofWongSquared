@@ -131,7 +131,7 @@ public boolean setLocation(String shipName, int[] coord, String direction) {
   }
   int[][] setHere = new int[currentShip.getSize()][2];
   int[] newCoords = new int[2];
-  //checking if ship os placed on a restricted area
+  //checking if ship is placed on a restricted area
   if (checkArea(coord) == false){
     return false;
   }
