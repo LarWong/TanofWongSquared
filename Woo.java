@@ -53,7 +53,7 @@ public class Woo{
     }
 
     // SHIP PLACEMENT
-    private static void promptShipPlacement(String player){
+    private static void promptShipPlacement(String player, Ship[] playerShips){
 	currPlayer = player;
 	if (currPlayer == "player0") {
 	    currPlayerGrid = Grid0;
@@ -69,7 +69,7 @@ public class Woo{
 	    boolean next = false;
 	    // Coordinates
 	    int[] coordinates = new int[2];
-	    
+
 	    System.out.println("Please provide starting coordinates for " + s);
 	    System.out.println("Please enter a number from 1-15");
 
@@ -102,7 +102,7 @@ public class Woo{
 			System.out.println("INVALID ORIENTATION");
 		    }
 		}
-		next = currPlayerGrid.setLocation(s, coordinates, orientation);
+		next = currPlayerGrid.setLocation(s, coordinates, orientation, playerShips);
 		System.out.println(next);
 	    }
 	} // end loop through currPlayerShips
