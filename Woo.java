@@ -95,12 +95,13 @@ public class Woo{
 	    // Orientation (Rotation)
 	    String orientation = "";
 
-	    while (next == false &&
-		   (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West")){
+	    while (next == false) {
 		System.out.print("Please provide the orientation of the " + s + "(North, South, East or West): ");
 		orientation = Keyboard.readString();
+		if (orientation != "North" || orientation != "South" || orientation != "East" || orientation != "West") {
+		    System.out.println("INVALID ORIENTATION");
+		}
 		next = true;
-
 	    }
 
 }
