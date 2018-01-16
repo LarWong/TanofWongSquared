@@ -54,8 +54,9 @@ public  String toString(){
 
     for (int y = 0; y < 15; y++){
 
-      checkingShips:
+
       if (hasCoords == true){
+        checkingShips:
         for (Ship vessel : ships){
           int[][] placingSymbols = vessel.getLocation();
           for (int row = 0; row < placingSymbols.length; row++){
@@ -68,8 +69,9 @@ public  String toString(){
         }
       }
 
-      checkingRestricted:
+
       if (hasRestrictions == true){
+        checkingRestricted:
         for (int[] restricted : restrictedArea){
           if (restricted[0] == x && restricted[1] == y){
             s += "  X";
@@ -195,7 +197,7 @@ public boolean setLocation(String shipName, int[] coord, String direction) {
     public Ship[] getShips(){
 	return ships;
     }
-    
+
 /**
 public static String printField;
 public static String printMarkup;
