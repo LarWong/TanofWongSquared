@@ -9,6 +9,7 @@ public class Woo{
 
     private static String currPlayer;
     private static PlayerGrid currPlayerGrid;
+    private static PlayerGrid otherPlayerGrid;
 
     private static InputStreamReader isr;
     private static BufferedReader in;
@@ -122,6 +123,53 @@ public class Woo{
 	System.out.println("AND OF COURSE NO CHEATING! THAT IS ALL! HAVE FUN AND GOOD LUCK!\n");
     }
 
+    //ships shooting
+    public static void salvo(String player){
+	currPlayer = player;
+	if (currPlayer == "player0") {
+	    currPlayerGrid = Grid0;
+	    otherPlayerGrid = Grid1;
+	}
+	else {
+	    currPlayerGrid = Grid1;
+	    otherPlayerGrid = Grid0;
+	}
+
+	for (Ship r: currPlayerGrid.getShips()) {
+	    // Coordinates
+	    int[] coordinates = new int[2];
+
+	    System.out.println("Please provide starting coordinates for " + r.getName());
+	    System.out.println("Please enter a number from 1-15");
+	    
+		while (coordinates[0] > 15 || coordinates[0] < 1) {
+		    System.out.println("Enter the row number (1-15):");
+		    coordinates[0] = Keyboard.readInt();
+		    if (coordinates[0] > 15 || coordinates[0] < 1) {
+			System.out.println("INVALID ROW NUMBER");
+		    }
+		}
+		while (coordinates[1] > 15 || coordinates[1] < 1) {
+		    System.out.println("Enter the column number (1-15):");
+		    coordinates[1] = Keyboard.readInt();
+		    if (coordinates[1] > 15 || coordinates[1] < 1) {
+			System.out.println("INVALID COLUMN NUMBER");
+		    }
+		}
+		for (Ship s : otherPlayerGrid.getShips()){
+		    for (int[] x : s.getLocation()){
+			if (Arrays.equals(coordinates, x))
+			    System.out.println(r.getName() + " hit " + s.getName() + " for " + r.shoot(s));
+			else {
+			    System.out.println(r.getName() + " missed " + s.getName() + ".");
+			}
+		    }
+		}
+	}
+	promptPlayerSwitch();
+    }
+	    
+	
     public static void main(String[] args){
 	Woo game = new Woo();
 	/* Debugging
@@ -145,16 +193,18 @@ public class Woo{
 	*/
 	game.promptShipPlacement("player1");
 	
-	tutorial();
+	game.tutorial();
 	// start game
 	// isAlive has not been implemented yet
-	/*
 	while (Grid0.isAlive() && Grid1.isAlive()) {
+	    game.salvo("player0");
+	    game.salvo("player1");
+	}
+	    
 	    // ship movement
 	    // ability and shooting
 	    // field updates
 	    // repeat
 	}
-	*/
-    }
+       
 }

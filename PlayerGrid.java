@@ -191,6 +191,10 @@ public boolean setLocation(String shipName, int[] coord, String direction) {
 	}
 	return true;
     }
+
+    public Ship[] getShips(){
+	return ships;
+    }
     
 /**
 public static String printField;

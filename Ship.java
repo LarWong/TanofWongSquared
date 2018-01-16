@@ -58,10 +58,18 @@ public abstract class Ship{
 
     public abstract void ability();
 
+    public int shoot(Ship opponent){
+	int damage = (int)(((Math.random() * 5) + attack) - opponent.getDefense());
+	if ( damage < 0 )
+	    damage = 0;
+	opponent.updateHealth(damage);
+	return damage;
+    }
+
     public void updateHealth(int damage){
 	health = health - damage;
 	if (health <= 0)
 	    isAlive = false;
     }
-
+    
 }
