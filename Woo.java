@@ -139,7 +139,7 @@ public class Woo{
 	    // Coordinates
 	    int[] coordinates = new int[2];
 
-	    System.out.println("Please provide starting coordinates for " + r.getName());
+	    System.out.println(r.getName() + " is ready to fire!");
 	    System.out.println("Please enter a number from 1-15");
 	    
 		while (coordinates[0] > 15 || coordinates[0] < 1) {
@@ -172,6 +172,8 @@ public class Woo{
 	
     public static void main(String[] args){
 	Woo game = new Woo();
+
+	game.tutorial();
 	/* Debugging
 	   System.out.println(Grid0);
 	   System.out.println(Grid1);
@@ -193,7 +195,7 @@ public class Woo{
 	*/
 	game.promptShipPlacement("player1");
 	
-	game.tutorial();
+	
 	// start game
 	// isAlive has not been implemented yet
 	while (Grid0.isAlive() && Grid1.isAlive()) {
