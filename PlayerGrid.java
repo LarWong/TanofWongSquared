@@ -184,6 +184,14 @@ public boolean setLocation(String shipName, int[] coord, String direction) {
 
 }
 
+    public boolean isAlive(){
+	for (Ship s : ships) {
+	    if (s.alive() == false)
+		return false;
+	}
+	return true;
+    }
+    
 /**
 public static String printField;
 public static String printMarkup;
