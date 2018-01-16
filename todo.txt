@@ -4,6 +4,11 @@ Larry Wong, Richard Wong, Stefan Tan
 
 Current Plan of Action
 Next Steps
-1. Ship superclass
-2. Subclasses of Ship
-3. PlayerGrid class
+1. Implement the Ship superclass.
+2. Implement the Subclasses of Ship.
+3. Implement the PlayerGrid class.
+4. Have everything encorporated into the Woo class.
+5. Fix any errors that may appear along the way.
+
+*MVP (Minimum Viable Product)
+Prioritize functionality over the fanciness of a code!

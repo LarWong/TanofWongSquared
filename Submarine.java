@@ -14,9 +14,13 @@ public class Submarine extends Ship
 	defense = 5;
 	movement = 6;
 	size = 3;
+  coords = new int[3][2];
+  symbol = "S";
+  name = "Submarine";
     }
 
     public void ability(){
-	System.out.println("Submarine")
-	    }
+	System.out.println("No abilities");
+	// Requires implementation
+    }
 }
