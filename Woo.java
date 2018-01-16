@@ -81,7 +81,10 @@ public class Woo{
 		    }
 		}
 	        next = currPlayerGrid.setLocation(shipName, coordinates, orientation);
-		System.out.println(next);
+		if (!next) {
+		    coordinates[0] = 0;
+		    coordinates[1] = 0;
+		}
 	    }
 	} // end loop through currPlayerShips
 	promptPlayerSwitch();
