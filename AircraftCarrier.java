@@ -10,13 +10,13 @@ public class AircraftCarrier extends Ship
     {
 	super();
 	health = 150;
-	attack = 40;
+	attack = 10;
 	defense = 10;
 	movement = 4;
 	size = 5;
 	coords = new int[5][2];
 	symbol = "A";
 	name = "AircraftCarrier";
-  
+
     }
 }

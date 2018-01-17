@@ -10,7 +10,7 @@ public class Destroyer extends Ship
     {
 	super();
 	health = 60;
-	attack = 30;
+	attack = 10;
 	defense = 30;
 	movement = 8;
 	size = 2;

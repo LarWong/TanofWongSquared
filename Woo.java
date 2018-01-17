@@ -140,11 +140,11 @@ public class Woo{
 	System.out.println(n0 + " Please setup your board");
 
 	Grid0.setHasCoords();
-	for (String shipName: shipNames) {
-	    Grid0.setAlive(shipName);
-	    promptShipPlacement(Grid0, shipName);
+	//for (String shipName: shipNames) {
+	    Grid0.setAlive("AircraftCarrier");
+	    promptShipPlacement(Grid0, "AircraftCarrier");
 	    System.out.println(Grid0);
-	}
+	//}
 	Grid0.printShips();
 	System.out.println(Grid0);
 
@@ -153,30 +153,35 @@ public class Woo{
 	System.out.println(n1 + " Please setup your board");
 
 	Grid1.setHasCoords();
-	for (String shipName: shipNames) {
-	    Grid1.setAlive(shipName);
-	    promptShipPlacement(Grid1, shipName);
+	//for (String shipName: shipNames) {
+	    Grid1.setAlive("AircraftCarrier");
+	    promptShipPlacement(Grid1, "AircraftCarrier");
 	    System.out.println(Grid1);
-	}
+	//}
 	Grid1.printShips();
 	System.out.println(Grid1);
 
 	promptPlayerSwitch();
 
 	while (Grid0.isAlive() && Grid1.isAlive()) {
-    if (round % 4 == 0){
-      promptWhichShip(Grid0);
-    }
-	    Grid0.salvo();
+    // if (round % 2 == 0){
+    //   promptWhichShip(Grid0);
+    // }
+
+    System.out.println(Grid0);
+	    int[][] g1 = Grid0.salvo();
+      Grid1.hitsOrMiss(g1);
 	    promptPlayerSwitch();
 
-    if (round % 4 == 0){
-      promptWhichShip(Grid1);
-      promptPlayerSwitch();
-    }
-      Grid1.salvo();
-      promptPlayerSwitch();
+    // if (round % 2 == 0){
+    //   promptWhichShip(Grid1);
+    //   promptPlayerSwitch();
+    // }
 
+    System.out.println(Grid1);
+      int[][] g2 = Grid1.salvo();
+      Grid0.hitsOrMiss(g2);
+      promptPlayerSwitch();
 	}
 
   if (Grid0.isAlive()){

@@ -66,7 +66,7 @@ public abstract class Ship{
 
 
   public int shoot(){
-    int damage = (int)(Math.random() * 5 * attack);
+    int damage = (int)(Math.random() * 2 * attack);
     if ( damage < 0 )
       damage = 0;
     return damage;

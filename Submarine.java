@@ -10,13 +10,13 @@ public class Submarine extends Ship
     {
 	super();
 	health = 50;
-	attack = 60;
+	attack = 20;
 	defense = 5;
 	movement = 6;
 	size = 3;
 	coords = new int[3][2];
 	symbol = "S";
 	name = "Submarine";
-  
+
     }
 }
