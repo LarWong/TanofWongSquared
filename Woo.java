@@ -135,10 +135,11 @@ public class Woo{
 	    System.out.println(Grid0);
 	}
 	Grid0.printShips();
-
 	System.out.println(Grid0);
+	
+	promptPlayerSwitch();
 
-		System.out.println(n0 + " Please setup your board");
+	System.out.println(n1 + " Please setup your board");
 
 	Grid1.setHasCoords();
 	for (String shipName: shipNames) {
@@ -147,8 +148,9 @@ public class Woo{
 	    System.out.println(Grid1);
 	}
 	Grid1.printShips();
-
 	System.out.println(Grid1);
+
+	promptPlayerSwitch();
 
 	while (Grid0.isAlive() && Grid1.isAlive()) {
 	    Grid0.salvo();
