@@ -32,7 +32,7 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- One obstacle was choosing a place to start. In our proposal, we had many peices that interacted with one another, so it was difficult to begin. However, once we created a UML diagram, each class and their relationships began to make sense. In addition, a flowchart helped establish our todo list and the order of opertations that needed to be carried out.
+- One obstacle was choosing a place to start. In our proposal, we had many pieces that interacted with one another, so it was difficult to begin. However, once we created a UML diagram, each class and their relationships began to make sense. In addition, a flowchart helped establish our todo list and the order of opertations that needed to be carried out.
 - Cooperation was an obstacle. Member of this group had different times schedules, so it was difficult to establish times to meet. Also, this resulted in push/pull issues. We resolved this issue by setting certain times to work on this project and scheduled times where we weren't too busy to communicate.
 - Often, new methods conflicted with prior code or produced outcome that did not produce desired results. This was resolved by pair coding, where a person codes while communicating with another member of the group. This reduces some errors, but it did not completely eliminate problems
 - Time management was a major obstacle. Members of the group did not have time to incoporate regular coding in their schedule and as a result we had to rush at the end. We tried to overcome this by determining a schedule.
