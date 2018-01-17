@@ -150,6 +150,10 @@ public class Woo{
 
 	System.out.println(Grid1);
 
+	while (Grid0.isAlive() && Grid1.isAlive()) {
+	    Grid0.salvo();
+            Grid1.salvo();
+	}
 	/*
 	  promptPlayerSwitch();
 
