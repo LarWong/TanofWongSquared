@@ -138,6 +138,18 @@ public class Woo{
 
 	System.out.println(Grid0);
 
+		System.out.println(n0 + " Please setup your board");
+
+	Grid1.setHasCoords();
+	for (String shipName: shipNames) {
+	    Grid1.setAlive(shipName);
+	    promptShipPlacement(Grid1, shipName);
+	    System.out.println(Grid1);
+	}
+	Grid1.printShips();
+
+	System.out.println(Grid1);
+
 	/*
 	  promptPlayerSwitch();
 
