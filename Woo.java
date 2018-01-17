@@ -186,7 +186,6 @@ public class Woo{
   }
 	/*
 	  promptPlayerSwitch();
-
 	  System.out.println(n1 + " Please setup your board");
 	  for (String shipName: shipNames) {
 	  promptShipPlacement(Grid1, shipName);
