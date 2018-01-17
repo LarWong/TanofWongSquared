@@ -10,6 +10,7 @@ public class Woo{
     private static String currPlayer;
     private static PlayerGrid currPlayerGrid;
     private static PlayerGrid otherPlayerGrid;
+    private static int round = 1;
 
 
     private static String[] shipNames = {"AircraftCarrier","Battleship","Cruiser","Destroyer","Submarine"};
@@ -146,7 +147,7 @@ public class Woo{
 	}
 	Grid0.printShips();
 	System.out.println(Grid0);
-	
+
 	promptPlayerSwitch();
 
 	System.out.println(n1 + " Please setup your board");
@@ -163,21 +164,28 @@ public class Woo{
 	promptPlayerSwitch();
 
 	while (Grid0.isAlive() && Grid1.isAlive()) {
-	    Grid0.hitsOrMiss(Grid0.salvo());
-	    System.out.println(Grid0);
+    if (round % 4 == 0){
+      promptWhichShip(Grid0);
+    }
+	    Grid0.salvo();
 	    promptPlayerSwitch();
-            Grid1.hitOrMiss(Grid1.salvo());
-	    System.out.println(Grid1);
-	    promptPlayerSwitch();
-	    
-	    promptWhichShip(Grid0);
-	    promptPlayerSwitch();
-	    promptWhichShip(Grid1);
-	    promptPlayerSwitch();
+
+    if (round % 4 == 0){
+      promptWhichShip(Grid1);
+      promptPlayerSwitch();
+    }
+      Grid1.salvo();
+      promptPlayerSwitch();
+
 	}
+
+  if (Grid0.isAlive()){
+    System.out.println("Winner: " + n0);
+  }else{
+    System.out.println("Winner: " + n1);
+  }
 	/*
 	  promptPlayerSwitch();
-
 	  System.out.println(n1 + " Please setup your board");
 	  for (String shipName: shipNames) {
 	  promptShipPlacement(Grid1, shipName);
