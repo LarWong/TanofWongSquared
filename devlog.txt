@@ -32,7 +32,11 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+- One obstacle was choosing a place to start. In our proposal, we had many peices that interacted with one another, so it was difficult to begin. However, once we created a UML diagram, each class and their relationships began to make sense. In addition, a flowchart helped establish our todo list and the order of opertations that needed to be carried out.
+- Cooperation was an obstacle. Member of this group had different times schedules, so it was difficult to establish times to meet. Also, this resulted in push/pull issues. We resolved this issue by setting certain times to work on this project and scheduled times where we weren't too busy to communicate.
+- Often, new methods conflicted with prior code or produced outcome that did not produce desired results. This was resolved by pair coding, where a person codes while communicating with another member of the group. This reduces some errors, but it did not completely eliminate problems
+- Time management was a major obstacle. Members of the group did not have time to incoporate regular coding in their schedule and as a result we had to rush at the end. We tried to overcome this by determining a schedule.
+- We had limited knowledge of java or forgotten some things that we learned in class. We sloved this through reviewing our notes and looking throught the Barron's book.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -43,17 +47,24 @@ maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+- Produce a minimum viable product, and incrementally build from it
+- Organize with UMLs and flowcharts
+- Wapper methods are really useful
+- Limit possible user input
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-We changed ___ to ___ bc...
-<etc>
-<etc>
+- We changed the size of our playing field from 20 by 20 to 15 by 15 because a 20 by 20 field is too big of an aread to play. This can lead to long and uninteresting games. In addition, this was also beause we had to get the grid to fit in the limited terminal size.
+- We decided to not add special abilities into the game. This change was made to accommodate the limited time we had and to prevent additional bugs that can occur
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
+- Plan your time wisely
+- Make sure everyone can meet at the same time
+- Make diagrams (UML, flow)
+- Organize code, have documentation
+- Communicate to team if you are pushing to github
+- It's ok to revise or recreate code
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -75,4 +86,60 @@ yyyy-mm-dd
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
+==============================================================
+
+2018-01-04
+--------------------------------------------------------------
+<Larry Wong> :: Created UML Diagram, Edited Project Proposal.
+<Richard Wong> :: Worked on UML Diagram. 
+<Stefan Tan> :: Worked on UML Diagram.
+==============================================================
+
+2018-01-04
+--------------------------------------------------------------
+<Larry Wong> :: Created UML Diagram, Edited Project Proposal.
+<Richard Wong> :: Worked on UML Diagram. 
+<Stefan Tan> :: Worked on UML Diagram.
+==============================================================
+
+2018-01-05
+--------------------------------------------------------------
+<Larry Wong> :: Improved Project Proposal, Improved UML Diagram.
+<Richard Wong> :: Worked on UML Diagram Proposal. 
+<Stefan Tan> :: Worked on UML Diagram and Project Proposal.
+==============================================================
+
+2018-01-08
+--------------------------------------------------------------
+<Larry Wong> :: Created and worked on README. Created and worked on Flowchart and to do list.
+<Richard Wong> :: Worked on and edited README. Worked on both Flowchart and edited it.
+<Stefan Tan> :: Worked on and edited README by adding more details. Worked on Flowchart and edited the to do list.
+==============================================================
+
+2018-01-10
+--------------------------------------------------------------
+<Larry Wong> :: Created template for PlayerGrid and Woo classes. Worked on PlayerGrid specifically the toString to represent the battlefield.
+<Richard Wong> :: Worked on Ship and the subclasses of Ship. 
+<Stefan Tan> :: Created template for the Ship ship and its subclasses. 
+==============================================================
+
+2018-01-11
+--------------------------------------------------------------
+<Larry Wong> :: Worked on PlayerGrid and Woo classes.
+<Richard Wong> :: Worked on PlayerGrid and Woo classes.
+<Stefan Tan> :: Worked on PlayerGrid and Woo classes.
+==============================================================
+
+2018-01-13
+--------------------------------------------------------------
+<Larry Wong> :: Revising PlayerGrid and Woo classes.
+<Richard Wong> :: Worked on PlayerGrid and Woo classes.
+<Stefan Tan> :: Added on tutorial, shoot and salvo. 
+==============================================================
+
+2018-01-15
+--------------------------------------------------------------
+<Larry Wong> :: Fixed problems that arose from the code.
+<Richard Wong> :: Edited the code for improve user experience.
+<Stefan Tan> :: Worked on PlayerGrid and Woo classes.
 ==============================================================
