@@ -82,8 +82,10 @@ public class Woo{
 	String shipName = "";
 	System.out.println("Please specify which ship you would like to move: ");
 	shipName = Keyboard.readString();
-	while (shipName != "AircraftCarrier" || shipName != "Battleship" || shipName != "Cruiser" || shipName != "Destroyer" || shipName != "Submarine") {
+	while (!(shipName.equals("AircraftCarrier") || shipName.equals("Battleship") || shipName.equals("Cruiser") || shipName.equals("Destroyer") || shipName.equals("Submarine"))) {
 	    System.out.println("INVALID SHIP NAME");
+	    System.out.println("Please specify which ship you would like to move: ");
+	    shipName = Keyboard.readString();
 	}
 	promptShipPlacement(current, shipName);
     }
@@ -164,6 +166,7 @@ public class Woo{
 	promptPlayerSwitch();
 
 	while (Grid0.isAlive() && Grid1.isAlive()) {
+<<<<<<< HEAD
     // if (round % 2 == 0){
     //   promptWhichShip(Grid0);
     // }
@@ -182,13 +185,28 @@ public class Woo{
       int[][] g2 = Grid1.salvo();
       Grid0.hitsOrMiss(g2);
       promptPlayerSwitch();
+=======
+	    if (round % 4 == 0){
+		promptWhichShip(Grid0);
+	    }
+	    Grid0.salvo();
+	    promptPlayerSwitch();
+
+	    if (round % 4 == 0){
+		promptWhichShip(Grid1);
+		promptPlayerSwitch();
+	    }
+	    Grid1.salvo();
+	    promptPlayerSwitch();
+	    round += 1;
+>>>>>>> d0fa4dbd89aaaa549b47a54da2ff751aae6566f6
 	}
 
-  if (Grid0.isAlive()){
-    System.out.println("Winner: " + n0);
-  }else{
-    System.out.println("Winner: " + n1);
-  }
+	if (Grid0.isAlive()){
+	    System.out.println("Winner: " + n0);
+	}else{
+	    System.out.println("Winner: " + n1);
+	}
 	/*
 	  promptPlayerSwitch();
 	  System.out.println(n1 + " Please setup your board");
