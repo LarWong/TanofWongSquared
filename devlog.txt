@@ -41,8 +41,7 @@ OBSTACLES OVERCOME
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
+- The ships do not register damage sometimes
 >
 
 COOL STUFF LEARNED
@@ -56,8 +55,9 @@ MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - We changed the size of our playing field from 20 by 20 to 15 by 15 because a 20 by 20 field is too big of an area to play. This can lead to long and uninteresting games. In addition, this was also beause we had to get the grid to fit in the limited terminal size.
 - We decided to not add special abilities into the game. This change was made to accommodate the limited time we had and to prevent additional bugs that can occur
-- We decided not to restrict the field because we could not add it in time due to the many bugs in the other functions.
-
+- We decided not to restrict the field because we could not add it in time due to the many bugs in the other functions. Instead, we made it so that the dead body of a ship takes up space.
+- We removed the markup grid because it gave too many bugs and it was too big, so the user had to constantly scroll up or down. This did not provide an enjoyable experience.
+- We also removed movement because this could prolong games too much. There will be no decisive winners for a long time.
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Plan your time wisely

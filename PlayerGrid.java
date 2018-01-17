@@ -2,10 +2,8 @@ import cs1.Keyboard;
 
 public class PlayerGrid{
 
+  //INSTANCE VARIABLES
   private int[][] field = new int[15][15];
-  private int[][] markup = new int[15][15];
-  private int[][] launches;
-  private boolean hasLaunches = false;
   private String _columns = "\t    00 01 02 03 04 05 06 07 08 09 10 11 12 13 14\n";
   private String[] _rows =
   {"00","01","02","03","04","05","06","07","08","09","10","11","12","13","14"};
@@ -18,6 +16,7 @@ public class PlayerGrid{
   private boolean hasCoords = false;
   private Ship currentShip;
 
+  //constructor
   public PlayerGrid(String n) {
     ships[0] = new AircraftCarrier();
     ships[1] = new Battleship();
@@ -27,6 +26,7 @@ public class PlayerGrid{
 
     name = n;
   }
+  //see if a ship is alive
   public void setAlive(String shipName){
     for (Ship vessel : ships){
       if (vessel.getName().equals(shipName)){
@@ -35,53 +35,16 @@ public class PlayerGrid{
     }
   }
 
+  //if a ship has manually set coordinates
   public void setHasCoords(){
     hasCoords = true;
   }
 
+  //override toString
   public  String toString(){
+
     int ctr = 0;
-    String s = "The Markup Grid: \n" + _columns;
-
-    for (int x = 0; x < 15; x++){
-      s += "\t" + _rows[ctr];
-
-      for (int y = 0; y < 15; y++){
-
-
-        if (hasLaunches == true){
-
-
-
-          for (int t = 0; t < launches.length; t++){
-
-
-                if (launches[t][0] == x && launches[t][1] == y && launches[t][3] == -2){
-
-                  s += "O"; //its a hit
-                  placement = true;
-
-                }else if (launches[t][0] == x && launches[t][1] == y){
-
-                  s+= "X"; //its a miss
-                  placement = true;
-
-                }
-
-          }
-        }
-
-        if (placement == false){
-          s += "  ~";
-        }
-        placement = false;
-      }
-      ctr += 1;
-      s+= "\n";
-    }
-
-    placement = false;
-
+    String s = "";
     s+= "\nYour Playing Field\n";
 
     ctr = 0;
@@ -99,7 +62,7 @@ public class PlayerGrid{
           for (Ship vessel : ships){
             int[][] placingSymbols = vessel.getLocation();
             for (int row = 0; row < placingSymbols.length; row++){
-              if (vessel.alive() == true && placingSymbols[row][0] == x && placingSymbols[row][1] == y){
+              if (vessel.getPlaced() == true && placingSymbols[row][0] == x && placingSymbols[row][1] == y){
                 s += "  " + vessel.getSymbol();
                 placement = true;
                 break checkingShips;
@@ -131,7 +94,7 @@ public class PlayerGrid{
         salvo[r][c] = -1;
       }
     }
-
+    System.out.println("It's " + name + "'s turn:");
     for (int shipNum = 0; shipNum < 5; shipNum++) {
       // Coordinates
       if (ships[shipNum].alive()){
@@ -168,54 +131,39 @@ public class PlayerGrid{
 
   }
 
+  //Calculate hot or miss
   public void hitsOrMiss(int[][] salvo){
 
-
-    int alive = 0;
-
-    for (int[] r : salvo){
-      if (r[0] != -1 && r[1] != -1){
-        alive++;
-      }
-    }
-
-    int[][] shots = new int[alive][3];
-
-    for (int r = 0; r < alive; r++){
-      for (int c = 0; c < 3; c++){
-        if (salvo[r][2] != -1){
-          shots[r][c] = salvo[r][c];
-      }
+    System.out.println("Your shots: ");
+    for (int[] x : salvo){
+      if (x[0] != -1){
+      System.out.println("[" + x[0] + "," + x[1] + "]");
       }
     }
 
     for (Ship x : ships){
       if (x.alive()){
         int[][] shipCoords = x.getLocation();
-        for (int r = 0; r < alive; r++){
-          if (shipCoords[r][0] == shots[r][0] && shipCoords[r][1] == shots[r][1]){
-              x.updateHealth(shots[r][2]);
-              shots[r][2] = -2;
+
+        for (int r = 0; r < shipCoords.length; r++){
+          for (int c = 0; c < salvo.length; c++){
+
+          if (shipCoords[r][0] == salvo[c][0] && shipCoords[r][1] == salvo[c][1]){
+            System.out.println("It's a hit at: [" + shipCoords[r][0] + "," + shipCoords[r][1] + "]");
+              x.updateHealth(salvo[c][2]);
           }
         }
+      }
 
       }
     }
-    hasLaunches = true;
-
-    // for (int[] f : shots){
-    //   for (int ds : f){
-    //     System.out.println(ds);
-    //   }
-    // }
-
-    launches = shots;
   }
 
-
+ //print ship location and health
   public void printShips(){
     for (Ship z : ships){
       System.out.println("-----------------------------\n");
+
       System.out.println(z.getName());
       System.out.println("Coordinates:");
 
@@ -227,6 +175,10 @@ public class PlayerGrid{
         }
         System.out.print("]");
       }
+
+      System.out.println("\nStatus:\nAlive?:");
+      System.out.println(z.alive());
+
       System.out.println("\nHealth:");
       System.out.println(z.getHealth());
 
@@ -235,6 +187,7 @@ public class PlayerGrid{
     }
   }
 
+  //check if a ship can be placed here
   public boolean checkArea(int[] coord){
 
     if (!(
@@ -262,6 +215,7 @@ public class PlayerGrid{
     return true;
   }
 
+//setting a ship's location
   public boolean setLocation(String shipName, int[] coord, String direction) {
     for (Ship s: ships) {
       if (s.getName().equals(shipName)){
@@ -318,11 +272,12 @@ public class PlayerGrid{
       }
     }
 
-
+    currentShip.placed();
     return currentShip.setLocation(setHere);
 
   }
 
+//checks if game continues
   public boolean isAlive(){
     for (Ship s : ships) {
       if (s.alive() == true)
@@ -331,19 +286,13 @@ public class PlayerGrid{
     return false;
   }
 
+//returns a copy of all ships
   public Ship[] getShips(){
     return ships;
   }
 
-
+//main method
   public static void main (String [] args){
-    PlayerGrid q = new PlayerGrid("Cool");
-    System.out.println(q);
-    q.printShips();
-
-
-
-
   }
 
 }

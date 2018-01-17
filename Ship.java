@@ -1,5 +1,8 @@
 public abstract class Ship{
+  
+  //INSTANCE VARIABLES
   private boolean isAlive = false;
+  private boolean placed = false;
   protected double health;
   protected int attack, defense, movement, size;
   protected int[][] coords;
@@ -7,8 +10,10 @@ public abstract class Ship{
   protected String name;
 
 
-  public boolean alive(){
-    return isAlive;
+
+  //Mutators
+  public void placed(){
+    placed = true;
   }
 
   public void setAlive(){
@@ -18,6 +23,14 @@ public abstract class Ship{
       }
     }
     isAlive = true;
+  }
+  //Accessors
+  public boolean alive(){
+    return isAlive;
+  }
+
+  public boolean getPlaced(){
+    return placed;
   }
 
   public String getName(){
@@ -48,12 +61,13 @@ public abstract class Ship{
     return size;
   }
 
+
   public int[][] getLocation(){
     return coords;
   }
 
-  //  public abstract void setLocation(int[][] coords);
 
+  //sets the coords
   public boolean setLocation(int[][] loc){
     for (int r = 0; r < size; r++){
       for (int c = 0; c < 2; c++){
@@ -64,18 +78,21 @@ public abstract class Ship{
 
   }
 
-
+  //returns damage
   public int shoot(){
     int damage = (int)(Math.random() * 2 * attack);
     if ( damage < 0 )
-      damage = 0;
+    damage = 0;
     return damage;
   }
 
+  //updates health, determines if it is dead
   public void updateHealth(int damage){
     health = health - (damage - defense);
-    if (health <= 0)
+    if (health <= 0){
       isAlive = false;
+      symbol = "X";
+    }
   }
 
 }
