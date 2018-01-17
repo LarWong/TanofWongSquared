@@ -17,5 +17,6 @@ public class AircraftCarrier extends Ship
 	coords = new int[5][2];
 	symbol = "A";
 	name = "AircraftCarrier";
+  
     }
 }

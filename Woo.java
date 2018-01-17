@@ -12,7 +12,7 @@ public class Woo{
     private static PlayerGrid otherPlayerGrid;
 
 
-    private static String[] shipNames = {"AircraftCarrier","Battleship","Cruiser","Destoyer","Submarine"};
+    private static String[] shipNames = {"AircraftCarrier","Battleship","Cruiser","Destroyer","Submarine"};
 
 
     // Reinitializes instance variables
@@ -62,20 +62,17 @@ public class Woo{
 
 
 
-    int[] z = inputCoords(shipName);
-    String q = inputDirection(shipName);
-    current.setAlive(shipName);
-	  boolean canDo = current.setLocation(shipName,z,q);
-    System.out.println(z);
-    System.out.println(q);
-    System.out.println(canDo);
+	  boolean canDo = false;
+
 
     while (!canDo){
-      System.out.println("\nINVALID PLACEMENT (space occupied)");
-      int[] p = inputCoords(shipName);
-      String o = inputDirection(shipName);
+      int[] z = inputCoords(shipName);
+      String q = inputDirection(shipName);
       current.setAlive(shipName);
+      //System.out.println(z);
+      //System.out.println(q);
   	  canDo = current.setLocation(shipName,z,q);
+            System.out.println(canDo);
     }
 
     } // end promptShipPlacement
@@ -94,7 +91,7 @@ public class Woo{
 	// }
 
 	// Prompt yes or no if players have switched
-	System.out.print("Enter any key to confirm this is " + currPlayer);
+	System.out.print("Enter any key to confirm this is the next player");
 	String happy = Keyboard.readString();
 }
 
@@ -130,9 +127,13 @@ public class Woo{
 	     tutorial();
 
        System.out.println(n0 + " Please setup your board");
+
        	 for (String shipName: shipNames) {
+             Grid0.setAlive(shipName);
              promptShipPlacement(Grid0, shipName);
             }
+            Grid0.printShips();
+
        Grid0.setHasCoords();
        System.out.println(Grid0);
 

@@ -154,6 +154,25 @@ public int[][] salvo(){
 
   return salvo;
 }
+public void printShips(){
+  for (Ship z : ships){
+    System.out.println("-----------------------------\n");
+    System.out.println(z.getName());
+    System.out.println("Coordinates:");
+
+    int[][] qwe = z.getLocation();
+    for(int[] x : qwe){
+      System.out.print("[ ");
+      for(int y : x){
+        System.out.print(y + " ");
+      }
+      System.out.print("]");
+    }
+
+    System.out.println("\n-----------------------------");
+
+  }
+}
 
 public boolean checkArea(int[] coord){
 
@@ -161,7 +180,7 @@ public boolean checkArea(int[] coord){
   coord[0] < 15 && coord[1] < 15 &&
   coord[0] >= 0 && coord[1] >= 0))
   {
-    //System.out.println("\nINVALID PLACEMENT (space occupied)");
+
     return false;
   }
 
@@ -169,8 +188,8 @@ public boolean checkArea(int[] coord){
     if (x.alive()){
     int[][] shipCoords = x.getLocation();
     for (int[] loc : shipCoords){
-      if (x.alive() && loc[0] == coord[0] && loc[1] == coord[1]){
-        //System.out.println("\nINVALID PLACEMENT (space occupied)");
+      if (loc[0] == coord[0] && loc[1] == coord[1]){
+        System.out.println("\nINVALID PLACEMENT (space occupied)");
         return false;
       }
 
@@ -247,9 +266,12 @@ public boolean setLocation(String shipName, int[] coord, String direction) {
       }
     }
   }
+  
+  /*
   for (int v: newCoords) {
     System.out.println(v);
   }
+  */
 
   return currentShip.setLocation(setHere);
 
@@ -278,7 +300,8 @@ public static void update;
 public static void main (String [] args){
   PlayerGrid q = new PlayerGrid("Cool");
   System.out.println(q);
-  q.salvo();
+  q.printShips();
+
 
 
 

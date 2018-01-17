@@ -17,5 +17,6 @@ public class Submarine extends Ship
 	coords = new int[3][2];
 	symbol = "S";
 	name = "Submarine";
+  
     }
 }

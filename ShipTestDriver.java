@@ -6,6 +6,6 @@ public class ShipTestDriver {
 	// Ships[0] = submarine;
 	Ships[0] = new Submarine();
 	System.out.println(Ships[0].getHealth());
-	
+
     }
 }

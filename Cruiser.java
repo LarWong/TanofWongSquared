@@ -17,5 +17,6 @@ public class Cruiser extends Ship
 	coords = new int[3][2];
 	symbol = "C";
 	name = "Cruiser";
+  
     }
 }

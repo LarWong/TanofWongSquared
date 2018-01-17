@@ -17,5 +17,6 @@ public class Battleship extends Ship
 	coords = new int[4][2];
 	symbol = "B";
 	name = "Battleship";
+  
     }
 }
