@@ -132,7 +132,7 @@ yyyy-mm-dd
 
 2018-01-13
 --------------------------------------------------------------
-<Larry Wong> :: Revising PlayerGrid and Woo classes.
+<Larry Wong> :: Revising PlayerGrid and Woo classes. Implemented Keyboard.java from cs1.
 <Richard Wong> :: Worked on PlayerGrid and Woo classes.
 <Stefan Tan> :: Added on tutorial, shoot and salvo. 
 ==============================================================
