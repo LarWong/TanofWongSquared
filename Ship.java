@@ -19,7 +19,7 @@ public abstract class Ship{
     }
 
     public String getSymbol(){
-      return symbol;
+	return symbol;
     }
 
     public double getHealth(){
@@ -45,24 +45,16 @@ public abstract class Ship{
     public int[][] getLocation(){
 	return coords;
     }
-
-<<<<<<< HEAD
-    public abstract void setLocation(int[][] coords);
     
-=======
     public boolean setLocation(int[][] loc){
-      for (int r = 0; r < size; r++){
-        for (int c = 0; c < 2; c++){
-          coords[r][c] =loc[r][c];
-        }
-      }
-      return true;
-
+	for (int r = 0; r < size; r++){
+	    for (int c = 0; c < 2; c++){
+		coords[r][c] =loc[r][c];
+	    }
+	}
+	return true;  
     }
->>>>>>> cc3afe038f9260951c8ce28c9fe43200f9828f9e
-
-    public abstract void ability();
-
+    
     public int shoot(Ship opponent){
 	int damage = (int)(((Math.random() * 5) + attack) - opponent.getDefense());
 	if ( damage < 0 )
