@@ -73,6 +73,7 @@ public  String toString(){
                 placement = true;
               }else if (launches[r][0] == x && launches[r][1] == y){
                 s+= "X"; //its a miss
+                field[r][c] ++;
                 placement = true;
               }
             }
