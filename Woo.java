@@ -36,14 +36,7 @@ public class Woo{
     }
 
     // SHIP PLACEMENT
-    private static void promptShipPlacement(String player){
-	currPlayer = player;
-	if (currPlayer == "player0") {
-	    currPlayerGrid = Grid0;
-	}
-	else {
-	    currPlayerGrid = Grid1;
-	}
+    private static void promptShipPlacement(PlayerGrid current){
 
 	for (String shipName: shipNames) {
 	    //used to determine if step is completed
@@ -87,7 +80,6 @@ public class Woo{
 		}
 	    }
 	} // end loop through currPlayerShips
-	promptPlayerSwitch();
     } // end promptShipPlacement
 
     private static void promptPlayerSwitch() {
@@ -126,57 +118,22 @@ public class Woo{
 	System.out.println("AND OF COURSE NO CHEATING! THAT IS ALL! HAVE FUN AND GOOD LUCK!\n");
     }
 
-    //ships shooting
-    public static void salvo(String player){
-	currPlayer = player;
-	if (currPlayer == "player0") {
-	    currPlayerGrid = Grid0;
-	    otherPlayerGrid = Grid1;
-	}
-	else {
-	    currPlayerGrid = Grid1;
-	    otherPlayerGrid = Grid0;
-	}
 
-	for (Ship r: currPlayerGrid.getShips()) {
-	    // Coordinates
-	    int[] coordinates = new int[2];
-
-	    System.out.println(r.getName() + " is ready to fire!");
-	    System.out.println("Please enter a number from 1-15");
-	    
-		while (coordinates[0] > 15 || coordinates[0] < 1) {
-		    System.out.println("Enter the row number (1-15):");
-		    coordinates[0] = Keyboard.readInt();
-		    if (coordinates[0] > 15 || coordinates[0] < 1) {
-			System.out.println("INVALID ROW NUMBER");
-		    }
-		}
-		while (coordinates[1] > 15 || coordinates[1] < 1) {
-		    System.out.println("Enter the column number (1-15):");
-		    coordinates[1] = Keyboard.readInt();
-		    if (coordinates[1] > 15 || coordinates[1] < 1) {
-			System.out.println("INVALID COLUMN NUMBER");
-		    }
-		}
-		for (Ship s : otherPlayerGrid.getShips()){
-		    for (int[] x : s.getLocation()){
-			if (Arrays.equals(coordinates, x))
-			    System.out.println(r.getName() + " hit " + s.getName() + " for " + r.shoot(s));
-			else {
-			    System.out.println(r.getName() + " missed " + s.getName() + ".");
-			}
-		    }
-		}
-	}
-	promptPlayerSwitch();
-    }
-	    
-	
     public static void main(String[] args){
-	Woo game = new Woo();
+	     //Woo game = new Woo();
+       System.out.println("What is Player0's name?");
+       String n0 = Keyboard.readString();
+       System.out.println("\n\n");
 
-	game.tutorial();
+       System.out.println("What is Player1's name?");
+       String n1 = Keyboard.readString();
+       System.out.println("\n\n\n\n");
+
+       PlayerGrid Grid0 = new PlayerGrid(n0);
+       PlayerGrid Grid1 = new PlayerGrid(n1);
+
+	     tutorial();
+
 	/* Debugging
 	   System.out.println(Grid0);
 	   System.out.println(Grid1);
@@ -190,26 +147,26 @@ public class Woo{
 
 	// prompt each player to specify ship location
 	// **requires implementation
-	game.promptShipPlacement("player0");
+	promptShipPlacement(Grid0);
 	/* Debugging
 	for (Ship s: currPlayerShips) {
 	    System.out.println(s);
 	}
 	*/
-	game.promptShipPlacement("player1");
-	
-	
+	promptShipPlacement(Grid1);
+
+
 	// start game
 	// isAlive has not been implemented yet
-	while (Grid0.isAlive() && Grid1.isAlive()) {
-	    game.salvo("player0");
-	    game.salvo("player1");
-	}
-	    
+	// while (Grid0.isAlive() && Grid1.isAlive()) {
+	//     game.salvo("player0");
+	//     game.salvo("player1");
+	// }
+
 	    // ship movement
 	    // ability and shooting
 	    // field updates
 	    // repeat
 	}
-       
+
 }
