@@ -82,8 +82,10 @@ public class Woo{
 	String shipName = "";
 	System.out.println("Please specify which ship you would like to move: ");
 	shipName = Keyboard.readString();
-	while (shipName != "AircraftCarrier" || shipName != "Battleship" || shipName != "Cruiser" || shipName != "Destroyer" || shipName != "Submarine") {
+	while (!(shipName.equals("AircraftCarrier") || shipName.equals("Battleship") || shipName.equals("Cruiser") || shipName.equals("Destroyer") || shipName.equals("Submarine"))) {
 	    System.out.println("INVALID SHIP NAME");
+	    System.out.println("Please specify which ship you would like to move: ");
+	    shipName = Keyboard.readString();
 	}
 	promptShipPlacement(current, shipName);
     }
