@@ -14,13 +14,8 @@ public class Battleship extends Ship
 	defense = 40;
 	movement = 4;
 	size = 4;
-  coords = new int[4][2];
-  symbol = "B";
-  name = "Battleship";
-    }
-
-    public void ability(){
-	System.out.println("The Battleship increases defense");
-	// Requires implementation
+	coords = new int[4][2];
+	symbol = "B";
+	name = "Battleship";
     }
 }

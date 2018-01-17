@@ -14,12 +14,8 @@ public class Cruiser extends Ship
 	defense = 20;
 	movement = 5;
 	size = 3;
-  coords = new int[3][2];
-  symbol = "C";
-  name = "Cruiser";
-    }
-
-    public void ability(){
-	System.out.println("The Cruiser increases its attack");
+	coords = new int[3][2];
+	symbol = "C";
+	name = "Cruiser";
     }
 }
