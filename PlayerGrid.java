@@ -10,6 +10,7 @@ public class PlayerGrid{
   private String[] _rows =
   {"00","01","02","03","04","05","06","07","08","09","10","11","12","13","14"};
   private int[][] restrictedArea = new int[20][20];
+  private int numRestricted = 0;
 
 
   private boolean hasRestrictions = false;
@@ -227,6 +228,32 @@ public void hitsOrMiss(int[][] salvo){
   launches = shots;
 }
 
+public void restrictField(){
+
+  hasRestrictions = true;
+
+  int theLargest = 0;
+  int[] theCoords = new int[2];
+
+  for (int r = 0; r < field.length; r++){
+    for (int c = 0; c < field.length; c ++){
+      if (field[r][c] > theLargest){
+        theLargest = field[r][c];
+        theCoords[0] = r;
+        theCoords[1] = c;
+      }
+
+    }
+  }
+
+  restrictedArea[numRestricted][0] = theCoords[0];
+  restrictedArea[numRestricted][1] = theCoords[1];
+
+
+
+
+}
+
 
 
 
@@ -246,6 +273,7 @@ public void printShips(){
       }
       System.out.print("]");
     }
+    System.out.println("Health:");
 
     System.out.println("\n-----------------------------");
 
