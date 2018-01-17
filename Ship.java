@@ -1,17 +1,17 @@
 public abstract class Ship{
-  private boolean isAlive, recharging;
+  private boolean isAlive = false;
   protected double health;
-  protected int attack, defense, movement, size, abCtr, roundLastUsed;
+  protected int attack, defense, movement, size;
   protected int[][] coords;
   protected String symbol;
   protected String name;
 
-  public Ship(){
-    isAlive = true;
-  }
-
   public boolean alive(){
     return isAlive;
+  }
+
+  public void setAlive(){
+    isAlive = true;
   }
 
   public String getName(){

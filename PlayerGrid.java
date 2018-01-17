@@ -32,6 +32,21 @@ public class PlayerGrid{
   }
   */
 }
+public void setAlive(String shipName){
+  for (Ship vessel : ships){
+    if (vessel.getName().equals(shipName)){
+      vessel.setAlive();
+    }
+  }
+}
+
+public void setHasCoords(){
+  hasCoords = true;
+}
+
+public void setHasRestrictions(){
+  hasRestrictions = true;
+}
 
 public  String toString(){
   int ctr = 0;
@@ -58,11 +73,12 @@ public  String toString(){
 
 
       if (hasCoords == true){
+
         checkingShips:
         for (Ship vessel : ships){
           int[][] placingSymbols = vessel.getLocation();
           for (int row = 0; row < placingSymbols.length; row++){
-            if (vessel.alive() && placingSymbols[row][0] == x && placingSymbols[row][1] == y){
+            if (vessel.alive() == true && placingSymbols[row][0] == x && placingSymbols[row][1] == y){
               s += "  " + vessel.getSymbol();
               placement = true;
               break checkingShips;
@@ -98,11 +114,6 @@ public  String toString(){
 public int[][] salvo(){
 
   int[][] salvo = new int[5][3];
-  for (int r = 0; r < 5; r++){
-    for (int c = 0; c < 3; c++){
-      salvo[r][c] = -1;
-    }
-  }
 
   for (int shipNum = 0; shipNum < 5; shipNum++) {
     // Coordinates
@@ -110,25 +121,24 @@ public int[][] salvo(){
       System.out.println(ships[shipNum].getName() + " is ready to fire!");
       System.out.println("Please enter a number from 0-14");
 
-      while (salvo[shipNum][0] == - 1  || salvo[shipNum][0] > 14 || salvo[shipNum][0] < 0) {
+      System.out.println("Enter the row number (0-14):");
+      salvo[shipNum][0] = Keyboard.readInt();
 
-        System.out.println("Enter the row number (0-14):");
-        salvo[shipNum][0] = Keyboard.readInt();
-
-        if (salvo[shipNum][0] > 14 || salvo[shipNum][0] < 0) {
+      while (salvo[shipNum][0] > 14 || salvo[shipNum][0] < 0) {
           System.out.println("INVALID ROW NUMBER");
-        }
+          System.out.println("Enter the row number (0-14):");
+          salvo[shipNum][0] = Keyboard.readInt();
 
       }
 
+      System.out.println("Enter the column number (0-14):");
+      salvo[shipNum][1] = Keyboard.readInt();
+
       while (salvo[shipNum][1] == - 1 || salvo[shipNum][1] > 14 || salvo[shipNum][1] < 0) {
-
-        System.out.println("Enter the column number (0-14):");
-        salvo[shipNum][1] = Keyboard.readInt();
-
-        if (salvo[shipNum][1] > 14 || salvo[shipNum][1] < 0) {
           System.out.println("INVALID COLUMN NUMBER");
-        }
+          System.out.println("Enter the column number (0-14):");
+          salvo[shipNum][1] = Keyboard.readInt();
+
 
       }
 
@@ -136,8 +146,8 @@ public int[][] salvo(){
       System.out.println("\n\n");
       // Debugging
       // System.out.println(shipNum);
-       // System.out.print(salvo[shipNum][0]);
-       // System.out.print(salvo[shipNum][1]);
+        //System.out.print(salvo[shipNum][0]);
+        //System.out.print(salvo[shipNum][1]);
        // System.out.print(salvo[shipNum][2]);
     }
   }
@@ -147,23 +157,27 @@ public int[][] salvo(){
 
 public boolean checkArea(int[] coord){
 
-  if (!(coord[0] < 16 && coord[1] < 16 &&
+  if (!(
+  coord[0] < 15 && coord[1] < 15 &&
   coord[0] >= 0 && coord[1] >= 0))
   {
+    //System.out.println("\nINVALID PLACEMENT (space occupied)");
     return false;
   }
 
   for (Ship x : ships){
+    if (x.alive()){
     int[][] shipCoords = x.getLocation();
     for (int[] loc : shipCoords){
-      if (loc[0] == coord[0] && loc[1] == coord[1]){
+      if (x.alive() && loc[0] == coord[0] && loc[1] == coord[1]){
+        //System.out.println("\nINVALID PLACEMENT (space occupied)");
         return false;
       }
 
     }
-  }
+  }}
 
-  if (restrictedArea.length > 0 ){
+  if (hasRestrictions){
     for (int[] x : restrictedArea)
     {
       if (x[0] == coord[0] && x[1] == coord[1]){
@@ -181,10 +195,10 @@ public boolean setLocation(String shipName, int[] coord, String direction) {
       currentShip = s;
     }
   }
-  for (int v: coord) {
-    System.out.println(v);
-  }
-  
+  // for (int v: coord) {
+  //   System.out.println(v);
+  // }
+
   int[][] setHere = new int[currentShip.getSize()][2];
   int[] newCoords = new int[2];
   //checking if ship is placed on a restricted area
