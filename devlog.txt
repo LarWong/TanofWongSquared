@@ -113,13 +113,13 @@ yyyy-mm-dd
 --------------------------------------------------------------
 <Larry Wong> :: Created and worked on README. Created and worked on Flowchart and to do list.
 <Richard Wong> :: Worked on and edited README. Worked on both Flowchart and edited it.
-<Stefan Tan> :: Worked on and edited README. Worked on Flowchart and edited the to do list.
+<Stefan Tan> :: Worked on and edited README by adding more details. Worked on Flowchart and edited the to do list.
 ==============================================================
 
 2018-01-10
 --------------------------------------------------------------
 <Larry Wong> :: Created template for PlayerGrid and Woo classes. Worked on PlayerGrid specifically the toString to represent the battlefield.
-<Richard Wong> :: Worked on Ship and the subclasses of Ship. Worked on 
+<Richard Wong> :: Worked on Ship and the subclasses of Ship. 
 <Stefan Tan> :: Created template for the Ship ship and its subclasses. 
 ==============================================================
 
