@@ -152,7 +152,9 @@ public class Woo{
 
 	while (Grid0.isAlive() && Grid1.isAlive()) {
 	    Grid0.salvo();
+	    promptPlayerSwitch();
             Grid1.salvo();
+	    promptPlayerSwitch();
 	}
 	/*
 	  promptPlayerSwitch();
