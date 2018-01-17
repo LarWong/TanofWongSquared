@@ -163,9 +163,11 @@ public class Woo{
 	promptPlayerSwitch();
 
 	while (Grid0.isAlive() && Grid1.isAlive()) {
-	    Grid0.salvo();
+	    Grid0.hitsOrMiss(Grid0.salvo());
+	    System.out.println(Grid0);
 	    promptPlayerSwitch();
-            Grid1.salvo();
+            Grid1.hitOrMiss(Grid1.salvo());
+	    System.out.println(Grid1);
 	    promptPlayerSwitch();
 	    
 	    promptWhichShip(Grid0);
