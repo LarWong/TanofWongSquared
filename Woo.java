@@ -77,6 +77,16 @@ public class Woo{
 
     } // end promptShipPlacement
 
+    public static void promptWhichShip(PlayerGrid current) {
+	String shipName = "";
+	System.out.println("Please specify which ship you would like to move: ");
+	shipName = Keyboard.readString();
+	while (shipName != "AircraftCarrier" || shipName != "Battleship" || shipName != "Cruiser" || shipName != "Destroyer" || shipName != "Submarine") {
+	    System.out.println("INVALID SHIP NAME");
+	}
+	promptShipPlacement(current, shipName);
+    }
+
     public static void promptPlayerSwitch() {
 
 	System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
@@ -156,6 +166,11 @@ public class Woo{
 	    Grid0.salvo();
 	    promptPlayerSwitch();
             Grid1.salvo();
+	    promptPlayerSwitch();
+	    
+	    promptWhichShip(Grid0);
+	    promptPlayerSwitch();
+	    promptWhichShip(Grid1);
 	    promptPlayerSwitch();
 	}
 	/*
